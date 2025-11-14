@@ -6,11 +6,10 @@ import { BattleState } from '../App';
 interface BattleResultsProps {
   battleState: BattleState;
   onHome: () => void;
-  onRematch: () => void;
   onLeaderboard: () => void;
 }
 
-export function BattleResults({ battleState, onHome, onRematch, onLeaderboard }: BattleResultsProps) {
+export function BattleResults({ battleState, onHome, onLeaderboard }: BattleResultsProps) {
   const [showConfetti, setShowConfetti] = useState(false);
   const [confettiPieces, setConfettiPieces] = useState<Array<{ id: number; x: number; color: string; delay: number }>>([]);
 
@@ -200,7 +199,7 @@ export function BattleResults({ battleState, onHome, onRematch, onLeaderboard }:
         transition={{ delay: 1 }}
         className="space-y-3"
       >
-        <div className="grid grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 gap-3">
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
@@ -209,15 +208,6 @@ export function BattleResults({ battleState, onHome, onRematch, onLeaderboard }:
           >
             <Home className="w-6 h-6" />
             <span className="text-sm text-white">Home</span>
-          </motion.button>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={onRematch}
-            className="bg-white/20 backdrop-blur-md rounded-2xl p-4 flex flex-col items-center gap-2"
-          >
-            <RotateCcw className="w-6 h-6" />
-            <span className="text-sm text-white">Rematch</span>
           </motion.button>
         </div>
         <motion.button

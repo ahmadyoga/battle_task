@@ -96,7 +96,6 @@ function App() {
           <BattleResults 
             battleState={battleState}
             onHome={() => navigateTo('hub')}
-            onRematch={() => startBattle(battleConfig)}
             onLeaderboard={() => navigateTo('hub')}
           />
         )}
