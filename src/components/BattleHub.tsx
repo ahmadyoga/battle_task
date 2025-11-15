@@ -40,6 +40,32 @@ export function BattleHub({ onNavigate }: BattleHubProps) {
         </div>
       </motion.div>
 
+      {/* Stats Card */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.4 }}
+        className="bg-white/10 backdrop-blur-md rounded-2xl p-6 mb-8"
+      >
+        <h3 className="text-white mb-4 text-center">Statistik Hari Ini</h3>
+        <div className="flex justify-around">
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <Zap className="w-5 h-5 text-yellow-300" />
+              <span className="text-2xl text-white">5</span>
+            </div>
+            <p className="text-white/80 text-sm">Menang</p>
+          </div>
+          <div className="w-px bg-white/20" />
+          <div className="text-center">
+            <div className="flex items-center justify-center gap-2 mb-1">
+              <Target className="w-5 h-5 text-green-300" />
+              <span className="text-2xl text-white">8</span>
+            </div>
+            <p className="text-white/80 text-sm">Battle</p>
+          </div>
+        </div>
+      </motion.div>
       {/* Arena Cards */}
       <div className="space-y-4 mb-8">
         <motion.button
@@ -129,32 +155,6 @@ export function BattleHub({ onNavigate }: BattleHubProps) {
         </div>
       </motion.button>
 
-      {/* Stats Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.4 }}
-        className="bg-white/10 backdrop-blur-md rounded-2xl p-6"
-      >
-        <h3 className="text-white mb-4 text-center">Statistik Hari Ini</h3>
-        <div className="flex justify-around">
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <Zap className="w-5 h-5 text-yellow-300" />
-              <span className="text-2xl text-white">5</span>
-            </div>
-            <p className="text-white/80 text-sm">Menang</p>
-          </div>
-          <div className="w-px bg-white/20" />
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-1">
-              <Target className="w-5 h-5 text-green-300" />
-              <span className="text-2xl text-white">8</span>
-            </div>
-            <p className="text-white/80 text-sm">Battle</p>
-          </div>
-        </div>
-      </motion.div>
     </div>
   );
 }
